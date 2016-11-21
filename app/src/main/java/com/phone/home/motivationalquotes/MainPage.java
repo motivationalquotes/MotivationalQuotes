@@ -10,25 +10,32 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainPage extends AppCompatActivity {
-    int numberOfMemes = 0;
+
+    Toolbar toolbar;
+    FloatingActionButton searchfab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_screen2);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        searchfab = (FloatingActionButton)findViewById(R.id.searchfab);
+        searchfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = new Snackbar.make(view, "ALOHA", Snackbar.LENGTH_LONG);
+                Snackbar.make(searchfab, "This is Snackbar Demo", Snackbar.LENGTH_LONG).setAction("Click", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Snackbar.make(searchfab, "This is Child Snackbar", Snackbar.LENGTH_LONG).show();
+                    }
+                }).show();
             }
         });
-    }
 
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main_page, menu);

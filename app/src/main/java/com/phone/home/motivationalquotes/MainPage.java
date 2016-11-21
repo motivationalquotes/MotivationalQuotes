@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainPage extends AppCompatActivity {
+    int numberOfMemes = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,18 +18,12 @@ public class MainPage extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        int numberOfMemes = 0;
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Aloha " + numberOfMemes, Snackbar.LENGTH_LONG).setAction("Snackbar", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        numberOfMemes++;
-                    }
-                });
+            public void onClick(View v) {
+                Snackbar snackbar = new Snackbar.make(view, "ALOHA", Snackbar.LENGTH_LONG);
             }
         });
     }

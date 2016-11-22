@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">MotivationalQuotes</string>
     <string name="main_text">
-        res/raw/quotes.txt
+        Finish what you start.\n
+        Have integrity.\n
+        Have values.\n
+        Be a mentor.\n
+        Stay committed.\n
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">Quotes</string>

@@ -7,6 +7,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
+import android.view.Gravity;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -25,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, quoteList.get((int) (Math.random() * quoteList.size())), Snackbar.LENGTH_LONG).show();
+                Snackbar snackbar = Snackbar.make(view, quoteList.get((int) (Math.random() * quoteList.size())), Snackbar.LENGTH_SHORT);
+
+
+                snackbar.show();
             }
         });
     }

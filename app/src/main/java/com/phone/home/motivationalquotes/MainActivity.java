@@ -10,8 +10,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    int memes = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,16 +22,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(view, "Snackbars: " + String.valueOf(memes), Snackbar.LENGTH_LONG)
-                        .setAction("Subtract", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                memes--;
-                                Snackbar.make(v, "Snackbars: " + String.valueOf(memes), Snackbar.LENGTH_LONG).show();
-                            }
-                        });
-                snackbar.show();
-                memes++;
+                Snackbar.make(view, "Test", Snackbar.LENGTH_LONG).show();
             }
         });
     }

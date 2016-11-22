@@ -9,11 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.*;
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<String> quoteList = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        constructQuoteArray(quoteList);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -24,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Test", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, quoteList.get((int) (Math.random() * quoteList.size())), Snackbar.LENGTH_LONG).show();
             }
         });
     }
 
-    static void constructQuoteArray(ArrayList<String> list) {
-        Scanner scanner = new Scanner(new File("../res/raw/quotes.txt"));
-        while(scanner.hasNext()) {
-            list.add(scanner.next());
+    void constructQuoteArray(ArrayList<String> list) {
+        Scanner scanner = new Scanner(getResources().openRawResource(R.raw.quotes));
+        while(scanner.hasNextLine()) {
+            list.add(scanner.nextLine());
         }
     }
 }

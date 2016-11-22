@@ -1,12 +1,7 @@
 <resources>
     <string name="app_name">MotivationalQuotes</string>
     <string name="main_text">
-        "Finish what you start.\n\n"
-        "Have integrity.\n\n"
-        "Have values.\n\n"
-        "Be a mentor.\n\n"
-        "Stay committed.\n\n"
-        "Listen well.\n\n"
+        res/raw/quotes.txt
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">Quotes</string>

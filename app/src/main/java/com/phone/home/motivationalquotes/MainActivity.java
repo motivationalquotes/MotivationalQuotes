@@ -24,13 +24,16 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "ALOHA", Snackbar.LENGTH_LONG)
-                        .setAction(String.valueOf(memes), new View.OnClickListener() {
+                Snackbar snackbar = Snackbar.make(view, "Snackbars: " + String.valueOf(memes), Snackbar.LENGTH_LONG)
+                        .setAction("Subtract", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                memes++;
+                                memes--;
+                                Snackbar.make(v, "Snackbars: " + String.valueOf(memes), Snackbar.LENGTH_LONG).show();
                             }
-                        }).show();
+                        });
+                snackbar.show();
+                memes++;
             }
         });
     }
